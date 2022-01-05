@@ -10,12 +10,25 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GardenShare">
         <activity
-            android:name=".MainActivity"
+            android:name=".MainScreen"
+            android:exported="true"
+            android:label="@string/title_activity_main_screen"
+            android:theme="@style/Theme.GardenShare.NoActionBar" />
+        <activity
+            android:name=".AmplifyMainApp"
+            android:exported="true"
+            android:label="@string/title_activity_amplify_main_app"
+            android:theme="@style/Theme.GardenShare.NoActionBar" />
+        <activity
+            android:name="com.amplifyframework.auth.cognito.activities.HostedUIRedirectActivity"
             android:exported="true">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.VIEW" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="GardenShare" />
             </intent-filter>
         </activity>
     </application>
